@@ -10,6 +10,12 @@ import UIKit
 
 class ViewWonderViewController: UIViewController {
 
+	@IBOutlet weak var wonderNameLabel: UILabel!
+	@IBOutlet weak var wonderLatitudeLabel: UILabel!
+	@IBOutlet weak var wonderLongitudeLabel: UILabel!
+	@IBOutlet weak var wonderTextView: UITextView!
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 

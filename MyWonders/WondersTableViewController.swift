@@ -21,19 +21,17 @@ class WondersTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+	
+		//Edit button appeats on the left
+		self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
 	
 	override func viewWillAppear(animated: Bool){
 		let wondersAppDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-		
 		let wondersContext:NSManagedObjectContext = wondersAppDel.managedObjectContext
-		
 		let wonderFetchRequest = NSFetchRequest(entityName: "Wonders")
-		
 		wonderFetchRequest.predicate = NSPredicate(format: "wonderShow =%@", true)
-		
 		let sortDescriptor = NSSortDescriptor(key:"wonderName", ascending: true)
-		
 		wonderFetchRequest.sortDescriptors = [sortDescriptor]
 		
 		do{
@@ -77,8 +75,40 @@ class WondersTableViewController: UITableViewController {
         // Configure the cell...
 		let wonder = wonders[indexPath.row]
 		cell.textLabel?.text = wonder.wonderName
+	
+		let cellLatitudeDouble:Double = wonder.wonderLatitude as Double!
+		let cellLatitudeString:String = String(format: "%.6f", cellLatitudeDouble)
+	
+	
+		let cellLongitudeDouble:Double = wonder.wonderLatitude as Double!
+		let cellLongitudeString:String = String(format: "%.6f", cellLongitudeDouble)
+	
+		cell.detailTextLabel?.text = "Lat: " + cellLatitudeString + " Lon: " + cellLongitudeString
 		return cell
     }
+	
+	// Override to support editing the table view.
+	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		if editingStyle == .Delete {
+			// Delete the row from the data source
+			let wondersAppDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+			let wondersContext:NSManagedObjectContext = wondersAppDel.managedObjectContext
+			wondersContext.deleteObject(wonders[indexPath.row] as Wonders) //delete from core data
+			
+			//save to core data
+			do{
+				try wondersContext.save()
+			} catch {
+				print("Could not save \(error)")
+			}
+			
+			wonders.removeAtIndex(indexPath.row) //delete frim Array of Wonders
+			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+		} else if editingStyle == .Insert {
+			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+		}
+	}
+	
 
 
     /*
@@ -89,17 +119,6 @@ class WondersTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
 
     /*
     // Override to support rearranging the table view.

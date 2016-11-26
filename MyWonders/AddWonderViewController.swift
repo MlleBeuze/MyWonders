@@ -33,6 +33,7 @@ class AddWonderViewController: UIViewController {
 			target: self, action: #selector(AddWonderViewController.addSaveButtonAction(_:)))
 	
 	topSaveConfirmationLabel.alpha = 0
+	wonderNotesTextView.text = ".."
 	
     }
 	
@@ -55,6 +56,7 @@ class AddWonderViewController: UIViewController {
 		newWonder.wonderLongitude = wonderLongitude
 		newWonder.wonderShow = true
 		newWonder.wonderType = "MY"
+		newWonder.wonderNotes = wonderNotesTextView.text
 		
 // if we remove "as! Wonders"
 //		newWonder.setValue(wonderName, forKey: "wonderName")

@@ -19,6 +19,9 @@ class ViewWonderViewController: UIViewController, MKMapViewDelegate, CLLocationM
 	
 	@IBOutlet weak var wonderMapView: MKMapView!
 	
+	@IBOutlet weak var wonderImageButtonOutlet: UIButton!
+	@IBOutlet weak var numberOfPhotosLabel: UILabel!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 

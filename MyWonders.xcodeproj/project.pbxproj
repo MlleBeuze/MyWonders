@@ -31,6 +31,7 @@
 		49ADD9761DE9FC65002554F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ADD9751DE9FC65002554F4 /* MapKit.framework */; };
 		49ADD9781DE9FC71002554F4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ADD9771DE9FC71002554F4 /* CoreLocation.framework */; };
 		49ADD97A1DEA06A8002554F4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9791DEA06A8002554F4 /* PhotosViewController.swift */; };
+		49ADD97E1DEA2BDF002554F4 /* WonderPhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD97D1DEA2BDF002554F4 /* WonderPhotosTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		49ADD9751DE9FC65002554F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		49ADD9771DE9FC71002554F4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		49ADD9791DEA06A8002554F4 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		49ADD97D1DEA2BDF002554F4 /* WonderPhotosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WonderPhotosTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		49964C631DE9146D0001336A = {
 			isa = PBXGroup;
 			children = (
+				49ADD97D1DEA2BDF002554F4 /* WonderPhotosTableViewController.swift */,
 				49ADD9771DE9FC71002554F4 /* CoreLocation.framework */,
 				49ADD9751DE9FC65002554F4 /* MapKit.framework */,
 				49ADD95B1DE92FAB002554F4 /* Settings+CoreDataProperties.swift */,
@@ -198,6 +201,7 @@
 				49ADD9681DE92FAB002554F4 /* Photos.swift in Sources */,
 				49ADD97A1DEA06A8002554F4 /* PhotosViewController.swift in Sources */,
 				49ADD9561DE926EB002554F4 /* WhereAmIViewController.swift in Sources */,
+				49ADD97E1DEA2BDF002554F4 /* WonderPhotosTableViewController.swift in Sources */,
 				49ADD96A1DE92FAB002554F4 /* Wonders.swift in Sources */,
 				49ADD9721DE94A39002554F4 /* ViewWonderViewController.swift in Sources */,
 				49ADD96B1DE92FAB002554F4 /* Videos+CoreDataProperties.swift in Sources */,

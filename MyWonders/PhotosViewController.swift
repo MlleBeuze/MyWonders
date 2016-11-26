@@ -9,8 +9,9 @@
 import UIKit
 import CoreData
 import AVFoundation //use image picker
+import MobileCoreServices
 
-class PhotosViewController: UIViewController, UIImagePickerControllerDelegate{
+class PhotosViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
 	@IBOutlet weak var addImageLabel: UILabel!
 	@IBOutlet weak var addImageSwitchLabel: UISwitch!
@@ -21,9 +22,30 @@ class PhotosViewController: UIViewController, UIImagePickerControllerDelegate{
 	var photosSourceType: String! //declare var Library or Camera to be used from incoming segue
 	
 	@IBAction func addWonderPhotoAction(sender: AnyObject) {
+		accessCameraOrPhotoLibrary()
 	}
 	
 	@IBAction func addImagetoCoreDataAction(sender: AnyObject) {
+		let photosAppDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let photosContext:NSManagedObjectContext = photosAppDel.managedObjectContext
+		
+		if addImageSwitchLabel.on{
+			let newImageData = UIImageJPEGRepresentation(wonderImage.image!, 1) //binary data object of photo image
+			
+			//inject the photo in the core data
+			let newPhoto = NSEntityDescription.insertNewObjectForEntityForName("Photos", inManagedObjectContext: photosContext) as! Photos
+			
+			newPhoto.wonderName = photosWonderName
+			newPhoto.wonderPhoto = newImageData
+			
+			do{
+				try	photosContext.save()
+				saveImageConfirmationLabel.alpha = 1
+				saveImageConfirmationLabel.text = "Saved Photo of: " + photosWonderName
+			} catch _{
+				
+			}
+		}
 	}
 	
     override func viewDidLoad() {
@@ -40,7 +62,43 @@ class PhotosViewController: UIViewController, UIImagePickerControllerDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
+	//Select from the photo library
+	func accessCameraOrPhotoLibrary(){
+		//create instance of the ImagePicker
+		let imagePicker = UIImagePickerController()
+		imagePicker.delegate = self
+		
+		
+		if photosSourceType == "Photos"{
+			if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary){
+				imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+				imagePicker.mediaTypes = [kUTTypeImage as NSString as String]
+				presentViewController(imagePicker, animated: true, completion: nil)
+			}
+		}
+	}
+	
+	func imagePickerControllerDidCancel(picker: UIImagePickerController) { //delegate to cancel photo selection from library
+		dismissViewControllerAnimated(true, completion: nil)
+	}
+	
+	func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+		dismissViewControllerAnimated(true, completion: nil)
+		
+		let mediaType = info[UIImagePickerControllerMediaType] as! NSString
+		
+		if mediaType.isEqualToString(kUTTypeImage as NSString as String) { //Media is an image
+			let image =  info[UIImagePickerControllerOriginalImage] as! UIImage
+			wonderImage.image = image
+			wonderImage.contentMode = .ScaleAspectFit
+		}
+		
+		addImageLabel.alpha = 1
+		addImageSwitchLabel.alpha = 1
+		addImageSwitchLabel.setOn(false, animated: true)
+		saveImageConfirmationLabel.alpha = 0
+	}
 
     /*
     // MARK: - Navigation

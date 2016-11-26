@@ -17,39 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G2O-z0-owL">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o9f-49-B2q">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FqP-az-RCU">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wjB-gV-pZJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vke-Ul-wVW">
-                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                                <subviews>
-                                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="jewel-20x20" translatesAutoresizingMaskIntoConstraints="NO" id="wY1-Ae-Mls">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="iconApp_original" translatesAutoresizingMaskIntoConstraints="NO" id="8If-GC-AzS">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="G2O-z0-owL" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="PjB-4g-Dpf"/>
-                            <constraint firstItem="G2O-z0-owL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vhv-XN-062"/>
+                            <constraint firstItem="8If-GC-AzS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3xN-TB-ybl"/>
+                            <constraint firstItem="8If-GC-AzS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="CtV-Rc-qWC"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -59,6 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="jewel-20x20" width="20" height="20"/>
+        <image name="iconApp_original" width="100" height="100"/>
     </resources>
 </document>

@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		49964C701DE9146D0001336A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49964C6F1DE9146D0001336A /* AppDelegate.swift */; };
-		49964C721DE9146D0001336A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49964C711DE9146D0001336A /* ViewController.swift */; };
 		49964C751DE9146D0001336A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49964C731DE9146D0001336A /* Main.storyboard */; };
 		49964C781DE9146D0001336A /* MyWonders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49964C761DE9146D0001336A /* MyWonders.xcdatamodeld */; };
 		49964C7D1DE9146D0001336A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49964C7B1DE9146D0001336A /* LaunchScreen.storyboard */; };
 		49ADD9541DE9218B002554F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ADD9531DE9218B002554F4 /* Assets.xcassets */; };
+		49ADD9561DE926EB002554F4 /* WhereAmIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9551DE926EB002554F4 /* WhereAmIViewController.swift */; };
+		49ADD9581DE92708002554F4 /* WondersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9571DE92708002554F4 /* WondersTableViewController.swift */; };
+		49ADD95A1DE9271E002554F4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9591DE9271E002554F4 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		49964C6C1DE9146D0001336A /* MyWonders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWonders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49964C6F1DE9146D0001336A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49964C711DE9146D0001336A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49964C741DE9146D0001336A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49964C771DE9146D0001336A /* MyWonders.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyWonders.xcdatamodel; sourceTree = "<group>"; };
 		49964C7C1DE9146D0001336A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49964C7E1DE9146D0001336A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49ADD9531DE9218B002554F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49ADD9551DE926EB002554F4 /* WhereAmIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhereAmIViewController.swift; sourceTree = "<group>"; };
+		49ADD9571DE92708002554F4 /* WondersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WondersTableViewController.swift; sourceTree = "<group>"; };
+		49ADD9591DE9271E002554F4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				49964C6F1DE9146D0001336A /* AppDelegate.swift */,
-				49964C711DE9146D0001336A /* ViewController.swift */,
 				49964C731DE9146D0001336A /* Main.storyboard */,
+				49ADD9551DE926EB002554F4 /* WhereAmIViewController.swift */,
+				49ADD9571DE92708002554F4 /* WondersTableViewController.swift */,
+				49ADD9591DE9271E002554F4 /* SettingsTableViewController.swift */,
 				49ADD9531DE9218B002554F4 /* Assets.xcassets */,
 				49964C7B1DE9146D0001336A /* LaunchScreen.storyboard */,
 				49964C7E1DE9146D0001336A /* Info.plist */,
@@ -139,9 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ADD9561DE926EB002554F4 /* WhereAmIViewController.swift in Sources */,
 				49964C781DE9146D0001336A /* MyWonders.xcdatamodeld in Sources */,
-				49964C721DE9146D0001336A /* ViewController.swift in Sources */,
+				49ADD95A1DE9271E002554F4 /* SettingsTableViewController.swift in Sources */,
 				49964C701DE9146D0001336A /* AppDelegate.swift in Sources */,
+				49ADD9581DE92708002554F4 /* WondersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

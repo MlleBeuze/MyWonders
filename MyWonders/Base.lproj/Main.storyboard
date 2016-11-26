@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Where Am I-->
         <scene sceneID="tCc-xu-yiE">
             <objects>
-                <viewController id="JPz-uL-6vo" sceneMemberID="viewController">
+                <viewController id="JPz-uL-6vo" customClass="WhereAmIViewController" customModule="MyWonders" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="742-4L-llt"/>
                         <viewControllerLayoutGuide type="bottom" id="bon-A1-Ghs"/>
@@ -30,16 +30,16 @@
                             <constraint firstItem="4y0-eY-f60" firstAttribute="centerX" secondItem="ypY-yA-PqT" secondAttribute="centerX" id="uK0-fv-51e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5u7-5c-Ull"/>
+                    <navigationItem key="navigationItem" title="Where Am I" id="5u7-5c-Ull"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfG-Th-PXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1620" y="-217"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Wonders Table-->
         <scene sceneID="4K7-cD-1CJ">
             <objects>
-                <tableViewController id="7oZ-sk-uXj" sceneMemberID="viewController">
+                <tableViewController title="Wonders Table" id="7oZ-sk-uXj" customClass="WondersTableViewController" customModule="MyWonders" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="df6-tN-yTZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
                             <outlet property="delegate" destination="7oZ-sk-uXj" id="E4L-iu-gLS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NU5-Xe-ihi"/>
+                    <navigationItem key="navigationItem" title="Wonders" id="NU5-Xe-ihi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZrO-39-7gb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,30 +84,50 @@
             </objects>
             <point key="canvasLocation" x="36" y="186"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Settings Table-->
         <scene sceneID="2n3-LM-Gcb">
             <objects>
-                <tableViewController id="wLd-xU-sfT" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nOW-km-mbc">
+                <tableViewController title="Settings Table" id="wLd-xU-sfT" customClass="SettingsTableViewController" customModule="MyWonders" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nOW-km-mbc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TJg-m6-XtA">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TJg-m6-XtA" id="RW9-jB-Ped">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="h82-Dz-iHJ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TJg-m6-XtA">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TJg-m6-XtA" id="RW9-jB-Ped">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TB5-dJ-qbF">
+                                        <rect key="frame" x="0.0" y="108" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TB5-dJ-qbF" id="YcR-x2-BDQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FQE-oC-1Tc">
+                                        <rect key="frame" x="0.0" y="152" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FQE-oC-1Tc" id="4J6-MQ-SsW">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="wLd-xU-sfT" id="vh4-1B-BSo"/>
                             <outlet property="delegate" destination="wLd-xU-sfT" id="Cy1-rA-mYI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="OID-Vq-D8Z"/>
+                    <navigationItem key="navigationItem" title="Settings" id="OID-Vq-D8Z"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzb-63-UxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

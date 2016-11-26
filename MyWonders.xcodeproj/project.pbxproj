@@ -28,6 +28,8 @@
 		49ADD9701DE937D5002554F4 /* AddWonderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD96F1DE937D5002554F4 /* AddWonderViewController.swift */; };
 		49ADD9721DE94A39002554F4 /* ViewWonderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9711DE94A39002554F4 /* ViewWonderViewController.swift */; };
 		49ADD9741DE95C3A002554F4 /* EditWonderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9731DE95C3A002554F4 /* EditWonderViewController.swift */; };
+		49ADD9761DE9FC65002554F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ADD9751DE9FC65002554F4 /* MapKit.framework */; };
+		49ADD9781DE9FC71002554F4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ADD9771DE9FC71002554F4 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		49ADD96F1DE937D5002554F4 /* AddWonderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWonderViewController.swift; sourceTree = "<group>"; };
 		49ADD9711DE94A39002554F4 /* ViewWonderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWonderViewController.swift; sourceTree = "<group>"; };
 		49ADD9731DE95C3A002554F4 /* EditWonderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWonderViewController.swift; sourceTree = "<group>"; };
+		49ADD9751DE9FC65002554F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		49ADD9771DE9FC71002554F4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ADD9781DE9FC71002554F4 /* CoreLocation.framework in Frameworks */,
+				49ADD9761DE9FC65002554F4 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +76,8 @@
 		49964C631DE9146D0001336A = {
 			isa = PBXGroup;
 			children = (
+				49ADD9771DE9FC71002554F4 /* CoreLocation.framework */,
+				49ADD9751DE9FC65002554F4 /* MapKit.framework */,
 				49ADD95B1DE92FAB002554F4 /* Settings+CoreDataProperties.swift */,
 				49ADD95C1DE92FAB002554F4 /* Settings.swift */,
 				49ADD95D1DE92FAB002554F4 /* Photos+CoreDataProperties.swift */,

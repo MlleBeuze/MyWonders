@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class ViewWonderViewController: UIViewController {
+class ViewWonderViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
 	@IBOutlet weak var wonderNameLabel: UILabel!
 	@IBOutlet weak var wonderLatitudeLabel: UILabel!
 	@IBOutlet weak var wonderLongitudeLabel: UILabel!
 	@IBOutlet weak var wonderTextView: UITextView!
 	
+	@IBOutlet weak var wonderMapView: MKMapView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()

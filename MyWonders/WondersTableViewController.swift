@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+var viewSelectedWonderName: String = ""
+var viewSelectedWonderLatitude: Double = 0.0
+var viewSelectedWonderLongitude: Double = 0.0
+var viewSelectedWonderNotes: String = ""
+
 class WondersTableViewController: UITableViewController {
 	
 	var wonders = [Wonders]() //refers to the Wonders class
@@ -107,6 +112,14 @@ class WondersTableViewController: UITableViewController {
 		} else if editingStyle == .Insert {
 			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
 		}
+	}
+	
+	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		let wonder = wonders[indexPath.row]
+		viewSelectedWonderName = wonder.wonderName
+		viewSelectedWonderLatitude = wonder.wonderLatitude as Double
+		viewSelectedWonderLongitude = wonder.wonderLongitude as Double
+		viewSelectedWonderNotes = wonder.wonderNotes
 	}
 	
 

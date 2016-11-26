@@ -26,6 +26,7 @@
 		49ADD96D1DE92FAB002554F4 /* Sounds+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9631DE92FAB002554F4 /* Sounds+CoreDataProperties.swift */; };
 		49ADD96E1DE92FAB002554F4 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9641DE92FAB002554F4 /* Sounds.swift */; };
 		49ADD9701DE937D5002554F4 /* AddWonderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD96F1DE937D5002554F4 /* AddWonderViewController.swift */; };
+		49ADD9721DE94A39002554F4 /* ViewWonderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9711DE94A39002554F4 /* ViewWonderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		49ADD9631DE92FAB002554F4 /* Sounds+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sounds+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		49ADD9641DE92FAB002554F4 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		49ADD96F1DE937D5002554F4 /* AddWonderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWonderViewController.swift; sourceTree = "<group>"; };
+		49ADD9711DE94A39002554F4 /* ViewWonderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWonderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				49964C6F1DE9146D0001336A /* AppDelegate.swift */,
 				49964C731DE9146D0001336A /* Main.storyboard */,
+				49ADD9711DE94A39002554F4 /* ViewWonderViewController.swift */,
 				49ADD96F1DE937D5002554F4 /* AddWonderViewController.swift */,
 				49ADD9551DE926EB002554F4 /* WhereAmIViewController.swift */,
 				49ADD9571DE92708002554F4 /* WondersTableViewController.swift */,
@@ -181,6 +184,7 @@
 				49ADD9681DE92FAB002554F4 /* Photos.swift in Sources */,
 				49ADD9561DE926EB002554F4 /* WhereAmIViewController.swift in Sources */,
 				49ADD96A1DE92FAB002554F4 /* Wonders.swift in Sources */,
+				49ADD9721DE94A39002554F4 /* ViewWonderViewController.swift in Sources */,
 				49ADD96B1DE92FAB002554F4 /* Videos+CoreDataProperties.swift in Sources */,
 				49964C781DE9146D0001336A /* MyWonders.xcdatamodeld in Sources */,
 				49ADD9671DE92FAB002554F4 /* Photos+CoreDataProperties.swift in Sources */,

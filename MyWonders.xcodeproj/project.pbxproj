@@ -15,6 +15,16 @@
 		49ADD9561DE926EB002554F4 /* WhereAmIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9551DE926EB002554F4 /* WhereAmIViewController.swift */; };
 		49ADD9581DE92708002554F4 /* WondersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9571DE92708002554F4 /* WondersTableViewController.swift */; };
 		49ADD95A1DE9271E002554F4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9591DE9271E002554F4 /* SettingsTableViewController.swift */; };
+		49ADD9651DE92FAB002554F4 /* Settings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD95B1DE92FAB002554F4 /* Settings+CoreDataProperties.swift */; };
+		49ADD9661DE92FAB002554F4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD95C1DE92FAB002554F4 /* Settings.swift */; };
+		49ADD9671DE92FAB002554F4 /* Photos+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD95D1DE92FAB002554F4 /* Photos+CoreDataProperties.swift */; };
+		49ADD9681DE92FAB002554F4 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD95E1DE92FAB002554F4 /* Photos.swift */; };
+		49ADD9691DE92FAB002554F4 /* Wonders+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD95F1DE92FAB002554F4 /* Wonders+CoreDataProperties.swift */; };
+		49ADD96A1DE92FAB002554F4 /* Wonders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9601DE92FAB002554F4 /* Wonders.swift */; };
+		49ADD96B1DE92FAB002554F4 /* Videos+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9611DE92FAB002554F4 /* Videos+CoreDataProperties.swift */; };
+		49ADD96C1DE92FAB002554F4 /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9621DE92FAB002554F4 /* Videos.swift */; };
+		49ADD96D1DE92FAB002554F4 /* Sounds+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9631DE92FAB002554F4 /* Sounds+CoreDataProperties.swift */; };
+		49ADD96E1DE92FAB002554F4 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9641DE92FAB002554F4 /* Sounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +38,16 @@
 		49ADD9551DE926EB002554F4 /* WhereAmIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhereAmIViewController.swift; sourceTree = "<group>"; };
 		49ADD9571DE92708002554F4 /* WondersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WondersTableViewController.swift; sourceTree = "<group>"; };
 		49ADD9591DE9271E002554F4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		49ADD95B1DE92FAB002554F4 /* Settings+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		49ADD95C1DE92FAB002554F4 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		49ADD95D1DE92FAB002554F4 /* Photos+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photos+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		49ADD95E1DE92FAB002554F4 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		49ADD95F1DE92FAB002554F4 /* Wonders+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Wonders+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		49ADD9601DE92FAB002554F4 /* Wonders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wonders.swift; sourceTree = "<group>"; };
+		49ADD9611DE92FAB002554F4 /* Videos+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Videos+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		49ADD9621DE92FAB002554F4 /* Videos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
+		49ADD9631DE92FAB002554F4 /* Sounds+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sounds+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		49ADD9641DE92FAB002554F4 /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +64,16 @@
 		49964C631DE9146D0001336A = {
 			isa = PBXGroup;
 			children = (
+				49ADD95B1DE92FAB002554F4 /* Settings+CoreDataProperties.swift */,
+				49ADD95C1DE92FAB002554F4 /* Settings.swift */,
+				49ADD95D1DE92FAB002554F4 /* Photos+CoreDataProperties.swift */,
+				49ADD95E1DE92FAB002554F4 /* Photos.swift */,
+				49ADD95F1DE92FAB002554F4 /* Wonders+CoreDataProperties.swift */,
+				49ADD9601DE92FAB002554F4 /* Wonders.swift */,
+				49ADD9611DE92FAB002554F4 /* Videos+CoreDataProperties.swift */,
+				49ADD9621DE92FAB002554F4 /* Videos.swift */,
+				49ADD9631DE92FAB002554F4 /* Sounds+CoreDataProperties.swift */,
+				49ADD9641DE92FAB002554F4 /* Sounds.swift */,
 				49964C6E1DE9146D0001336A /* MyWonders */,
 				49964C6D1DE9146D0001336A /* Products */,
 			);
@@ -145,9 +175,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ADD9681DE92FAB002554F4 /* Photos.swift in Sources */,
 				49ADD9561DE926EB002554F4 /* WhereAmIViewController.swift in Sources */,
+				49ADD96A1DE92FAB002554F4 /* Wonders.swift in Sources */,
+				49ADD96B1DE92FAB002554F4 /* Videos+CoreDataProperties.swift in Sources */,
 				49964C781DE9146D0001336A /* MyWonders.xcdatamodeld in Sources */,
+				49ADD9671DE92FAB002554F4 /* Photos+CoreDataProperties.swift in Sources */,
+				49ADD9691DE92FAB002554F4 /* Wonders+CoreDataProperties.swift in Sources */,
+				49ADD96D1DE92FAB002554F4 /* Sounds+CoreDataProperties.swift in Sources */,
+				49ADD9651DE92FAB002554F4 /* Settings+CoreDataProperties.swift in Sources */,
 				49ADD95A1DE9271E002554F4 /* SettingsTableViewController.swift in Sources */,
+				49ADD9661DE92FAB002554F4 /* Settings.swift in Sources */,
+				49ADD96C1DE92FAB002554F4 /* Videos.swift in Sources */,
+				49ADD96E1DE92FAB002554F4 /* Sounds.swift in Sources */,
 				49964C701DE9146D0001336A /* AppDelegate.swift in Sources */,
 				49ADD9581DE92708002554F4 /* WondersTableViewController.swift in Sources */,
 			);

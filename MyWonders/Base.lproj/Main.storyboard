@@ -91,7 +91,7 @@
         <!--Add Wonder-->
         <scene sceneID="gjP-nX-1c3">
             <objects>
-                <viewController title="Add Wonder" id="wIo-5o-dFw" sceneMemberID="viewController">
+                <viewController title="Add Wonder" id="wIo-5o-dFw" customClass="AddWonderViewController" customModule="MyWonders" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MFz-nx-iNL"/>
                         <viewControllerLayoutGuide type="bottom" id="9IA-iR-I3n"/>
@@ -190,6 +190,13 @@
                             <constraint firstItem="Heg-vc-ujS" firstAttribute="top" secondItem="lii-8Y-pfg" secondAttribute="bottom" constant="8" id="yhG-yo-oPC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="topSaveConfirmationLabel" destination="cKU-eo-49q" id="KjX-xt-QMu"/>
+                        <outlet property="wonderLatitudeTextField" destination="pr1-HR-Oje" id="D6v-JT-a58"/>
+                        <outlet property="wonderLongitudeTextField" destination="Heg-vc-ujS" id="SLz-g9-j7r"/>
+                        <outlet property="wonderNameTextField" destination="lii-8Y-pfg" id="6MK-1O-yfq"/>
+                        <outlet property="wonderNotesTextView" destination="kBd-jM-xhr" id="qN4-W0-yOo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7N-vy-2xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

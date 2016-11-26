@@ -133,7 +133,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zI-2d-Izn">
-                                <rect key="frame" x="440.5" y="112" width="63" height="21"/>
+                                <rect key="frame" x="441" y="112" width="63" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="xCb-UA-lUI"/>
                                     <constraint firstAttribute="width" constant="63" id="xQ2-4h-cyS"/>
@@ -155,6 +155,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4Z-Ij-nsH">
+                                <rect key="frame" x="532" y="493" width="48" height="30"/>
+                                <state key="normal" title="Photos"/>
+                                <connections>
+                                    <segue destination="QoS-ZM-19a" kind="show" id="54w-kt-JGF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -167,9 +174,11 @@
                             <constraint firstItem="RSS-aU-njq" firstAttribute="leading" secondItem="rEB-xh-em2" secondAttribute="leadingMargin" id="c49-FH-NXZ"/>
                             <constraint firstItem="PtV-Tx-vFc" firstAttribute="leading" secondItem="rEB-xh-em2" secondAttribute="leading" id="cXx-WM-T3e"/>
                             <constraint firstItem="Hf8-RB-B8s" firstAttribute="trailing" secondItem="rEB-xh-em2" secondAttribute="trailingMargin" id="go9-5y-jXy"/>
+                            <constraint firstItem="8eF-ls-xGG" firstAttribute="top" secondItem="p4Z-Ij-nsH" secondAttribute="bottom" constant="28" id="hWJ-4e-cnE"/>
                             <constraint firstItem="XxM-lW-8Xg" firstAttribute="leading" secondItem="RSS-aU-njq" secondAttribute="trailing" constant="-13" id="hkZ-bR-d55"/>
                             <constraint firstItem="BMg-o8-7Fc" firstAttribute="trailing" secondItem="rEB-xh-em2" secondAttribute="trailingMargin" id="knL-ub-aLS"/>
                             <constraint firstItem="BMg-o8-7Fc" firstAttribute="top" secondItem="PtV-Tx-vFc" secondAttribute="bottom" constant="8" id="o3l-e7-Yur"/>
+                            <constraint firstItem="p4Z-Ij-nsH" firstAttribute="trailing" secondItem="rEB-xh-em2" secondAttribute="trailingMargin" id="tIv-p9-SjQ"/>
                             <constraint firstItem="PtV-Tx-vFc" firstAttribute="top" secondItem="3zI-2d-Izn" secondAttribute="bottom" constant="8" id="tJo-Kr-pY5"/>
                             <constraint firstItem="w5i-kW-he4" firstAttribute="trailing" secondItem="rEB-xh-em2" secondAttribute="trailingMargin" id="tnE-vi-G0L"/>
                             <constraint firstItem="3zI-2d-Izn" firstAttribute="top" secondItem="w5i-kW-he4" secondAttribute="bottom" constant="19" id="vp8-o0-759"/>
@@ -190,6 +199,35 @@
             </objects>
             <point key="canvasLocation" x="2354" y="1411"/>
         </scene>
+        <!--Wonder Photos-->
+        <scene sceneID="QcG-eZ-qr2">
+            <objects>
+                <tableViewController id="QoS-ZM-19a" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Nh-16-l6q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WonderPhotoCell" id="W6U-X4-I92">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W6U-X4-I92" id="gJg-hf-til">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QoS-ZM-19a" id="H7g-I5-Nz5"/>
+                            <outlet property="delegate" destination="QoS-ZM-19a" id="FY2-Yn-wEd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Wonder Photos" id="p9H-sq-lJz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edq-JI-o8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3032" y="1406"/>
+        </scene>
         <!--Add Wonder-->
         <scene sceneID="gjP-nX-1c3">
             <objects>
@@ -203,7 +241,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save Confirmation Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKU-eo-49q">
-                                <rect key="frame" x="20" y="86" width="560" height="14.5"/>
+                                <rect key="frame" x="20" y="86" width="560" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -259,13 +297,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CZ-Ch-wup">
-                                <rect key="frame" x="532" y="513" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CZ-Ch-wup">
+                                <rect key="frame" x="538" y="503" width="42" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ZWg-Bd-hBz"/>
-                                    <constraint firstAttribute="width" constant="48" id="nhH-3m-KP9"/>
+                                    <constraint firstAttribute="width" constant="42" id="DIJ-DU-B6Q"/>
                                 </constraints>
-                                <state key="normal" title="Photos"/>
+                                <state key="normal" image="pic_ios"/>
                                 <connections>
                                     <segue destination="7RL-5e-Rlb" kind="show" identifier="addToPhotos" id="Wzn-Dm-RGM"/>
                                 </connections>
@@ -275,14 +312,15 @@
                         <constraints>
                             <constraint firstItem="lii-8Y-pfg" firstAttribute="top" secondItem="cKU-eo-49q" secondAttribute="bottom" constant="21.5" id="3G9-C9-Vqn"/>
                             <constraint firstItem="9IA-iR-I3n" firstAttribute="top" secondItem="kBd-jM-xhr" secondAttribute="bottom" constant="93" id="Abm-qM-T6x"/>
+                            <constraint firstItem="9IA-iR-I3n" firstAttribute="top" secondItem="2CZ-Ch-wup" secondAttribute="bottom" constant="8" symbolic="YES" id="CI5-dy-gaf"/>
                             <constraint firstItem="lii-8Y-pfg" firstAttribute="leading" secondItem="Yfs-Ie-e5o" secondAttribute="leadingMargin" id="CTv-TZ-xLa"/>
                             <constraint firstItem="cKU-eo-49q" firstAttribute="leading" secondItem="Yfs-Ie-e5o" secondAttribute="leadingMargin" id="Fmd-pM-BFr"/>
                             <constraint firstItem="pr1-HR-Oje" firstAttribute="top" secondItem="lii-8Y-pfg" secondAttribute="bottom" constant="8" id="GQd-zg-KvT"/>
                             <constraint firstItem="cKU-eo-49q" firstAttribute="top" secondItem="MFz-nx-iNL" secondAttribute="bottom" constant="22" id="Gbl-hL-PIe"/>
                             <constraint firstItem="pr1-HR-Oje" firstAttribute="leading" secondItem="rgy-oD-9PP" secondAttribute="trailing" constant="-6" id="KqZ-O5-PRj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YmM-Sb-hGe" secondAttribute="trailing" constant="89" id="MDP-C8-sC5"/>
-                            <constraint firstItem="2CZ-Ch-wup" firstAttribute="trailing" secondItem="Yfs-Ie-e5o" secondAttribute="trailingMargin" id="Rdh-qI-7RM"/>
                             <constraint firstItem="kBd-jM-xhr" firstAttribute="trailing" secondItem="Yfs-Ie-e5o" secondAttribute="trailingMargin" id="SGK-bK-kjm"/>
+                            <constraint firstItem="2CZ-Ch-wup" firstAttribute="trailing" secondItem="kBd-jM-xhr" secondAttribute="trailing" id="ShI-lr-ekT"/>
                             <constraint firstItem="YmM-Sb-hGe" firstAttribute="top" secondItem="lii-8Y-pfg" secondAttribute="bottom" constant="12" id="Shs-QZ-cOt"/>
                             <constraint firstItem="rgy-oD-9PP" firstAttribute="leading" secondItem="Yfs-Ie-e5o" secondAttribute="leadingMargin" id="Yk1-vH-lZZ"/>
                             <constraint firstItem="rgy-oD-9PP" firstAttribute="top" secondItem="lii-8Y-pfg" secondAttribute="bottom" constant="12" id="c9i-1Y-JDY"/>
@@ -291,7 +329,6 @@
                             <constraint firstItem="cKU-eo-49q" firstAttribute="top" secondItem="MFz-nx-iNL" secondAttribute="bottom" constant="22" id="l8Z-MN-qYM"/>
                             <constraint firstItem="kBd-jM-xhr" firstAttribute="top" secondItem="Heg-vc-ujS" secondAttribute="bottom" constant="8" id="oR8-au-zx4"/>
                             <constraint firstItem="lii-8Y-pfg" firstAttribute="trailing" secondItem="Yfs-Ie-e5o" secondAttribute="trailingMargin" id="pE4-YN-iAi"/>
-                            <constraint firstItem="9IA-iR-I3n" firstAttribute="top" secondItem="2CZ-Ch-wup" secondAttribute="bottom" constant="8" id="qRI-vM-Eqd"/>
                             <constraint firstItem="kBd-jM-xhr" firstAttribute="leading" secondItem="Yfs-Ie-e5o" secondAttribute="leadingMargin" id="qkz-4N-Gqy"/>
                             <constraint firstItem="cKU-eo-49q" firstAttribute="trailing" secondItem="Yfs-Ie-e5o" secondAttribute="trailingMargin" id="rB3-Ox-Ot8"/>
                             <constraint firstItem="Heg-vc-ujS" firstAttribute="trailing" secondItem="Yfs-Ie-e5o" secondAttribute="trailingMargin" id="w8F-RS-m8H"/>
@@ -299,6 +336,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="photosButtonLabel" destination="2CZ-Ch-wup" id="Do1-Eu-QRG"/>
                         <outlet property="topSaveConfirmationLabel" destination="cKU-eo-49q" id="KjX-xt-QMu"/>
                         <outlet property="wonderLatitudeTextField" destination="pr1-HR-Oje" id="D6v-JT-a58"/>
                         <outlet property="wonderLongitudeTextField" destination="Heg-vc-ujS" id="SLz-g9-j7r"/>
@@ -642,5 +680,6 @@
         <image name="cog-20x20" width="20" height="20"/>
         <image name="jewel-20x20" width="20" height="20"/>
         <image name="map_location-20x20" width="20" height="20"/>
+        <image name="pic_ios" width="40" height="40"/>
     </resources>
 </document>

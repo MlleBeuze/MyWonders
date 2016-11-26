@@ -16,6 +16,7 @@ class AddWonderViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var wonderLatitudeTextField: UITextField!
 	@IBOutlet weak var wonderLongitudeTextField: UITextField!
 	@IBOutlet weak var wonderNotesTextView: UITextView!
+	@IBOutlet weak var photosButtonLabel: UIButton!
 	
 	var wonderName:String = ""
 	var wonderLatitude:Double = 0.0
@@ -36,6 +37,7 @@ class AddWonderViewController: UIViewController, UITextFieldDelegate {
 		wonderNotesTextView.text = ".."
 		
 		self.wonderNameTextField.delegate = self
+		photosButtonLabel.alpha = 0
 	
     }
 	
@@ -73,6 +75,7 @@ class AddWonderViewController: UIViewController, UITextFieldDelegate {
 			try wondersContext.save()
 			topSaveConfirmationLabel.alpha = 1
 			topSaveConfirmationLabel.text = "Saved: " + wonderName
+			photosButtonLabel.alpha = 1
 		} catch {
 			topSaveConfirmationLabel.alpha = 1
 			topSaveConfirmationLabel.text = "Error: " + wonderName

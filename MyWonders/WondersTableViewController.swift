@@ -14,6 +14,12 @@ var viewSelectedWonderLatitude: Double = 0.0
 var viewSelectedWonderLongitude: Double = 0.0
 var viewSelectedWonderNotes: String = ""
 
+var editSelectedRow: Int = 0
+var editSelectedWonderName: String = ""
+var editSelectedWonderLatitude: Double = 0.0
+var editSelectedWonderLongitude: Double = 0.0
+var editSelectedWonderNotes: String = ""
+
 class WondersTableViewController: UITableViewController {
 	
 	var wonders = [Wonders]() //refers to the Wonders class
@@ -85,7 +91,7 @@ class WondersTableViewController: UITableViewController {
 		let cellLatitudeString:String = String(format: "%.6f", cellLatitudeDouble)
 	
 	
-		let cellLongitudeDouble:Double = wonder.wonderLatitude as Double!
+		let cellLongitudeDouble:Double = wonder.wonderLongitude as Double!
 		let cellLongitudeString:String = String(format: "%.6f", cellLongitudeDouble)
 	
 		cell.detailTextLabel?.text = "Lat: " + cellLatitudeString + " Lon: " + cellLongitudeString
@@ -122,7 +128,15 @@ class WondersTableViewController: UITableViewController {
 		viewSelectedWonderNotes = wonder.wonderNotes
 	}
 	
-
+	override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+		let wonder = wonders[indexPath.row]
+		
+		editSelectedRow = indexPath.row
+		editSelectedWonderName = wonder.wonderName
+		editSelectedWonderLatitude = wonder.wonderLatitude as Double
+		editSelectedWonderLongitude = wonder.wonderLongitude as Double
+		editSelectedWonderNotes = wonder.wonderNotes
+	}
 
     /*
     // Override to support conditional editing of the table view.

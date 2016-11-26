@@ -23,16 +23,16 @@ class ViewWonderViewController: UIViewController {
 		wonderNameLabel.text = viewSelectedWonderName
 	
 		//Conver CD Lat + Lon doubles to string
-	let cellLatitudeDouble:Double = viewSelectedWonderLatitude as Double!
-	let cellLatitudeString:String = String(format: "%.6f", cellLatitudeDouble)
-	
-	let cellLongitudeDouble:Double = viewSelectedWonderLongitude as Double!
-	let cellLongitudeString:String = String(format: "%.6f", cellLongitudeDouble)
-	
-	wonderLatitudeLabel.text = cellLatitudeString
-	wonderLongitudeLabel.text = cellLongitudeString
-	
-	wonderTextView.text = viewSelectedWonderNotes
+		let cellLatitudeDouble:Double = viewSelectedWonderLatitude as Double!
+		let cellLatitudeString:String = String(format: "%.6f", cellLatitudeDouble)
+		
+		let cellLongitudeDouble:Double = viewSelectedWonderLongitude as Double!
+		let cellLongitudeString:String = String(format: "%.6f", cellLongitudeDouble)
+		
+		wonderLatitudeLabel.text = cellLatitudeString
+		wonderLongitudeLabel.text = cellLongitudeString
+		
+		wonderTextView.text = viewSelectedWonderNotes
 	
     }
 

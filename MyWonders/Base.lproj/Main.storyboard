@@ -477,6 +477,13 @@
                             <constraint firstItem="E21-lg-DG9" firstAttribute="leading" secondItem="BmT-xd-vtH" secondAttribute="trailing" id="sCa-Go-9h0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editSaveConfirmationLabel" destination="bbV-fm-503" id="hft-6t-0I1"/>
+                        <outlet property="wonderLatitudeTextField" destination="E21-lg-DG9" id="XlW-Dz-p1d"/>
+                        <outlet property="wonderLongitudeTextField" destination="ye0-Lz-v0E" id="H1r-36-IWv"/>
+                        <outlet property="wonderNameTextField" destination="jyZ-GU-iH3" id="ssh-lV-Ucz"/>
+                        <outlet property="wonderNotesTextView" destination="bsZ-fT-bAY" id="QbA-Pd-tB6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUQ-MH-sOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

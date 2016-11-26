@@ -37,6 +37,30 @@ class ViewWonderViewController: UIViewController, MKMapViewDelegate, CLLocationM
 		
 		wonderTextView.text = viewSelectedWonderNotes
 	
+		//Convert the lat and lon values to a map location
+		let latitude: CLLocationDegrees = viewSelectedWonderLatitude
+		let longitude: CLLocationDegrees = viewSelectedWonderLongitude
+		
+		let deltaLatitude:CLLocationDegrees = 0.01
+		let deltaLongitude:CLLocationDegrees = 0.01
+		
+		let span:MKCoordinateSpan = MKCoordinateSpanMake(deltaLatitude, deltaLongitude)
+		
+		let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+		
+		let region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+		
+		wonderMapView.setRegion(region, animated: true)
+	
+		/* Annotations are pins with text bubbles on the map
+		Define annotaton coordinates then text title */
+	
+		let wonderAnnotation = MKPointAnnotation()
+		wonderAnnotation.coordinate = location
+		wonderAnnotation.title = viewSelectedWonderName
+		wonderMapView.addAnnotation(wonderAnnotation)
+	
+	
     }
 
     override func didReceiveMemoryWarning() {

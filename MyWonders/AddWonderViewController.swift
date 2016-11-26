@@ -33,6 +33,45 @@ class AddWonderViewController: UIViewController {
 			target: self, action: "addSaveButtonAction:")
 	
     }
+	
+	@IBAction func addSaveButtonAction(sender:AnyObject){
+		wonderName = wonderNameTextField.text!
+		wonderLatitude = Double(wonderLatitudeTextField.text!) ?? 0.0
+		wonderLongitude = Double(wonderLongitudeTextField.text!) ?? 0.0
+		wonderNotes = wonderNotesTextView.text!
+		
+		//Save the wonder record to Core Data
+		let wondersAppDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		
+		let wondersContext:NSManagedObjectContext = wondersAppDel.managedObjectContext
+		
+		let newWonder = NSEntityDescription.insertNewObjectForEntityForName("Wonders", inManagedObjectContext: wondersContext) as! Wonders
+		
+		//value key assignments
+		newWonder.wonderName = wonderName
+		newWonder.wonderLatitude = wonderLatitude
+		newWonder.wonderLongitude = wonderLongitude
+		newWonder.wonderShow = true
+		newWonder.wonderType = "MY"
+		
+// if we remove "as! Wonders"
+//		newWonder.setValue(wonderName, forKey: "wonderName")
+//		newWonder.setValue(wonderLatitude, forKey: "wonderLatitude")
+//		newWonder.setValue(wonderLongitude, forKey: "wonderLongitude")
+//		newWonder.setValue(wonderNotes, forKey: "wonderNotes")
+//		newWonder.setValue(true, forKey: "wonderShow")
+//		newWonder.setValue("MY", forKey: "wonderType")
+		
+		//save to core data
+		do{
+			try wondersContext.save()
+			topSaveConfirmationLabel.text = "Saved: " + wonderName
+		} catch {
+			topSaveConfirmationLabel.text = "Error: " + wonderName
+			print("Could not save \(error)")
+		}
+		
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -322,31 +322,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Image to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr3-cE-Kke">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Image to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr3-cE-Kke">
                                 <rect key="frame" x="20" y="77" width="509" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdx-jQ-3K3">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdx-jQ-3K3">
                                 <rect key="frame" x="531" y="72" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="fW8-gP-BJp"/>
+                                    <constraint firstAttribute="width" constant="49" id="qgV-K7-9DA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="addImagetoCoreDataAction:" destination="7RL-5e-Rlb" eventType="valueChanged" id="or6-ic-UIW"/>
+                                </connections>
                             </switch>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4uF-bq-Mtx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4uF-bq-Mtx">
                                 <rect key="frame" x="20" y="153" width="560" height="353"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save Confirmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqh-i9-Adp">
-                                <rect key="frame" x="20" y="114" width="141" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save Confirmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqh-i9-Adp">
+                                <rect key="frame" x="20" y="114" width="560" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4uF-bq-Mtx" firstAttribute="trailing" secondItem="wEm-e4-4og" secondAttribute="trailingMargin" id="4bV-EQ-sr8"/>
+                            <constraint firstItem="Aqh-i9-Adp" firstAttribute="top" secondItem="wdx-jQ-3K3" secondAttribute="bottom" constant="11" id="BFb-TZ-a9N"/>
+                            <constraint firstItem="Fr3-cE-Kke" firstAttribute="top" secondItem="aVT-XM-Vg4" secondAttribute="bottom" constant="13" id="FB1-mx-zYx"/>
+                            <constraint firstItem="Aqh-i9-Adp" firstAttribute="trailing" secondItem="wEm-e4-4og" secondAttribute="trailingMargin" id="Fks-HZ-Igo"/>
+                            <constraint firstItem="Aqh-i9-Adp" firstAttribute="leading" secondItem="wEm-e4-4og" secondAttribute="leadingMargin" id="Je7-09-qTp"/>
+                            <constraint firstItem="4uF-bq-Mtx" firstAttribute="top" secondItem="Aqh-i9-Adp" secondAttribute="bottom" constant="24.5" id="VcG-N1-amg"/>
+                            <constraint firstItem="wdx-jQ-3K3" firstAttribute="top" secondItem="aVT-XM-Vg4" secondAttribute="bottom" constant="8" id="W13-xy-T1q"/>
+                            <constraint firstItem="Fr3-cE-Kke" firstAttribute="leading" secondItem="wEm-e4-4og" secondAttribute="leadingMargin" id="YdU-fq-3ov"/>
+                            <constraint firstItem="wdx-jQ-3K3" firstAttribute="leading" secondItem="Fr3-cE-Kke" secondAttribute="trailing" constant="2" id="dbS-0I-SrY"/>
+                            <constraint firstItem="mly-se-WY7" firstAttribute="top" secondItem="4uF-bq-Mtx" secondAttribute="bottom" constant="45" id="rFS-pu-kLi"/>
+                            <constraint firstItem="wdx-jQ-3K3" firstAttribute="trailing" secondItem="wEm-e4-4og" secondAttribute="trailingMargin" id="sOx-z4-p85"/>
+                            <constraint firstItem="4uF-bq-Mtx" firstAttribute="leading" secondItem="wEm-e4-4og" secondAttribute="leadingMargin" id="uwI-PH-kxS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Photos" id="2fd-Im-GoQ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="KcM-GS-GGq"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WHz-qj-ECw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WHz-qj-ECw">
+                            <connections>
+                                <action selector="addWonderPhotoAction:" destination="7RL-5e-Rlb" id="cr0-2X-QAN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addImageLabel" destination="Fr3-cE-Kke" id="bFb-DP-jMq"/>
+                        <outlet property="addImageSwitchLabel" destination="wdx-jQ-3K3" id="Y23-A7-K2F"/>
+                        <outlet property="saveImageConfirmationLabel" destination="Aqh-i9-Adp" id="4Lq-Hc-g3s"/>
+                        <outlet property="wonderImage" destination="4uF-bq-Mtx" id="7VP-bg-1h7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7W-UX-gYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

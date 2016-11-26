@@ -61,7 +61,7 @@
 		49ADD9751DE9FC65002554F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		49ADD9771DE9FC71002554F4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		49ADD9791DEA06A8002554F4 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
-		49ADD97D1DEA2BDF002554F4 /* WonderPhotosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WonderPhotosTableViewController.swift; sourceTree = "<group>"; };
+		49ADD97D1DEA2BDF002554F4 /* WonderPhotosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WonderPhotosTableViewController.swift; path = ../WonderPhotosTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,6 @@
 		49964C631DE9146D0001336A = {
 			isa = PBXGroup;
 			children = (
-				49ADD97D1DEA2BDF002554F4 /* WonderPhotosTableViewController.swift */,
 				49ADD9771DE9FC71002554F4 /* CoreLocation.framework */,
 				49ADD9751DE9FC65002554F4 /* MapKit.framework */,
 				49ADD95B1DE92FAB002554F4 /* Settings+CoreDataProperties.swift */,
@@ -111,6 +110,7 @@
 			children = (
 				49964C6F1DE9146D0001336A /* AppDelegate.swift */,
 				49964C731DE9146D0001336A /* Main.storyboard */,
+				49ADD97D1DEA2BDF002554F4 /* WonderPhotosTableViewController.swift */,
 				49ADD9791DEA06A8002554F4 /* PhotosViewController.swift */,
 				49ADD9731DE95C3A002554F4 /* EditWonderViewController.swift */,
 				49ADD9711DE94A39002554F4 /* ViewWonderViewController.swift */,

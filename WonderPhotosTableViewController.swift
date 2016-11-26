@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class WonderPhotosTableViewController: UITableViewController {
-
+class WonderPhotosTableViewController: UITableViewController, UINavigationControllerDelegate {
+	
+	var wonderPhotosArray: [Photos] = [] //array to hold 1 wonder multiple photos
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +22,27 @@ class WonderPhotosTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+	
+	override func viewWillAppear(animated: Bool) {
+		let wonderPhotosAppDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let wonderPhotosContext:NSManagedObjectContext = wonderPhotosAppDel.managedObjectContext
+		let wonderPhotosFetchRequest = NSFetchRequest(entityName: "Photos")
+		
+		//Create a predicate that selects on the "wonderName" propertu of the Core Data object
+		wonderPhotosFetchRequest.predicate = NSPredicate(format: "wonderName = %@", viewSelectedWonderName) //select 1 wonder record only
+		
+		do{
+			let wonderPhotosFetchedResults = try wonderPhotosContext.executeFetchRequest(wonderPhotosFetchRequest) as? [Photos]
+			wonderPhotosArray = wonderPhotosFetchedResults!
+		}
+		catch{
+			print("Could not fetch \(error)")
+		}
+		
+		self.tableView.reloadData()
 
+		
+	}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,7 +57,7 @@ class WonderPhotosTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return wonderPhotosArray.count
     }
 
 	
@@ -42,9 +65,25 @@ class WonderPhotosTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("WonderPhotoCell", forIndexPath: indexPath)
 
         // Configure the cell...
+	
+		let wonderPhoto: Photos = wonderPhotosArray[indexPath.row]
+		let wonderPhotoName = wonderPhoto.wonderName
+		let wonderPhotoImage = UIImage(data: wonderPhoto.wonderPhoto! as NSData)
+		
+		if let nameLabel = cell.viewWithTag(101) as? UILabel{
+			nameLabel.text = wonderPhotoName
+		}
+		
+		if let wonderPhotoImageView = cell.viewWithTag(100) as? UIImageView{
+			wonderPhotoImageView.image = wonderPhotoImage
+		}
 
         return cell
     }
+	
+	override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+		return tableView.frame.size.height;
+	}
 
 
     /*

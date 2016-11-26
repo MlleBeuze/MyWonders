@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import MapKit
 import CoreLocation
 
@@ -65,6 +66,50 @@ class ViewWonderViewController: UIViewController, MKMapViewDelegate, CLLocationM
 	
 	
     }
+	
+	override func viewWillAppear(animated: Bool) {
+		print("HERE1")
+		//Retrieve the photos entity 1st photo image & total number of Photos
+		
+		//get Image Data from Core Data
+		let photosAppDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let photosContext: NSManagedObjectContext = photosAppDel.managedObjectContext
+		print("HERE2")
+		let photosFetchRequest = NSFetchRequest(entityName: "Photos")
+		print("HERE3")
+		//Create a predicate that selects on the "wonderName" property of the Core Data object
+		photosFetchRequest.predicate = NSPredicate(format: "wonderName = %@", viewSelectedWonderName) //select 1 wonder record only
+		
+		var photos: [Photos] = [] //array to hold 1 wonder photos
+		
+		do{
+			let photosFetchResults = try photosContext.executeFetchRequest(photosFetchRequest) as? [Photos]
+			photos = photosFetchResults!
+		} catch {
+			print("Could not fetch \(error)")
+		}
+		
+		numberOfPhotosLabel.text = String(photos.count)
+		
+		if photos.count == 0{
+			print("HERE4")
+			if let image = UIImage(named: "photo_default"){
+				wonderImageButtonOutlet.setImage(image, forState: .Normal)
+			}
+		}
+		else{
+			print("HERE")
+			let photo: Photos = photos[0] //get the 1st photo image
+			
+			if let thumbnail = UIImage(data: photo.wonderPhoto!){
+				wonderImageButtonOutlet.setImage(thumbnail, forState: .Normal)
+			} else{
+				if let image = UIImage(named: "photo_default"){
+					wonderImageButtonOutlet.setImage(image, forState: .Normal)
+				}
+			}
+		}
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

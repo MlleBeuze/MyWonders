@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class WondersTableViewController: UITableViewController {
 	
-	var wonders = ["Test 1","Test 2","Test 3"]
+	var wonders = [Wonders]() //refers to the Wonders class
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,36 @@ class WondersTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+	
+	override func viewWillAppear(animated: Bool){
+		let wondersAppDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		
+		let wondersContext:NSManagedObjectContext = wondersAppDel.managedObjectContext
+		
+		let wonderFetchRequest = NSFetchRequest(entityName: "Wonders")
+		
+		wonderFetchRequest.predicate = NSPredicate(format: "wonderShow =%@", true)
+		
+		let sortDescriptor = NSSortDescriptor(key:"wonderName", ascending: true)
+		
+		wonderFetchRequest.sortDescriptors = [sortDescriptor]
+		
+		do{
+			if let wonderFetchedResults = try wondersContext.executeFetchRequest(wonderFetchRequest) as? [Wonders]{
+				wonders = wonderFetchedResults
+			}
+			else{
+				print("ELSE if let results = try.. FAILED")
+			}
+		}
+		catch{
+			fatalError("There was an errir fetching the list of groups!")
+		}
+		
+		self.tableView.reloadData()
+		
+
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,7 +76,7 @@ class WondersTableViewController: UITableViewController {
 
         // Configure the cell...
 		let wonder = wonders[indexPath.row]
-		cell.textLabel?.text = wonder
+		cell.textLabel?.text = wonder.wonderName
 		return cell
     }
 

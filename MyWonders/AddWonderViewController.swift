@@ -30,11 +30,13 @@ class AddWonderViewController: UIViewController {
 	
 		navigationItem.rightBarButtonItem = UIBarButtonItem(
 			barButtonSystemItem: saveRightBarButton,
-			target: self, action: "addSaveButtonAction:")
+			target: self, action: #selector(AddWonderViewController.addSaveButtonAction(_:)))
+	
+	topSaveConfirmationLabel.alpha = 0
 	
     }
 	
-	@IBAction func addSaveButtonAction(sender:AnyObject){
+	@IBAction func addSaveButtonAction(sender: AnyObject){
 		wonderName = wonderNameTextField.text!
 		wonderLatitude = Double(wonderLatitudeTextField.text!) ?? 0.0
 		wonderLongitude = Double(wonderLongitudeTextField.text!) ?? 0.0
@@ -65,8 +67,10 @@ class AddWonderViewController: UIViewController {
 		//save to core data
 		do{
 			try wondersContext.save()
+			topSaveConfirmationLabel.alpha = 1
 			topSaveConfirmationLabel.text = "Saved: " + wonderName
 		} catch {
+			topSaveConfirmationLabel.alpha = 1
 			topSaveConfirmationLabel.text = "Error: " + wonderName
 			print("Could not save \(error)")
 		}

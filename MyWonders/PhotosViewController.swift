@@ -26,26 +26,7 @@ class PhotosViewController: UIViewController, UIImagePickerControllerDelegate, U
 	}
 	
 	@IBAction func addImagetoCoreDataAction(sender: AnyObject) {
-		let photosAppDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-		let photosContext:NSManagedObjectContext = photosAppDel.managedObjectContext
-		
-		if addImageSwitchLabel.on{
-			let newImageData = UIImageJPEGRepresentation(wonderImage.image!, 1) //binary data object of photo image
-			
-			//inject the photo in the core data
-			let newPhoto = NSEntityDescription.insertNewObjectForEntityForName("Photos", inManagedObjectContext: photosContext) as! Photos
-			
-			newPhoto.wonderName = photosWonderName
-			newPhoto.wonderPhoto = newImageData
-			
-			do{
-				try	photosContext.save()
-				saveImageConfirmationLabel.alpha = 1
-				saveImageConfirmationLabel.text = "Saved Photo of: " + photosWonderName
-			} catch _{
-				
-			}
-		}
+		addImageToCoreData()
 	}
 	
     override func viewDidLoad() {
@@ -56,6 +37,8 @@ class PhotosViewController: UIViewController, UIImagePickerControllerDelegate, U
 		addImageLabel.text = photosWonderName
 		addImageSwitchLabel.alpha = 0
 		saveImageConfirmationLabel.alpha = 0
+	
+		accessCameraOrPhotoLibrary()
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,8 +79,33 @@ class PhotosViewController: UIViewController, UIImagePickerControllerDelegate, U
 		
 		addImageLabel.alpha = 1
 		addImageSwitchLabel.alpha = 1
-		addImageSwitchLabel.setOn(false, animated: true)
+		addImageSwitchLabel.setOn(true, animated: true)
 		saveImageConfirmationLabel.alpha = 0
+		
+		addImageToCoreData()
+	}
+	
+	func addImageToCoreData(){
+		let photosAppDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let photosContext:NSManagedObjectContext = photosAppDel.managedObjectContext
+		
+		if addImageSwitchLabel.on{
+			let newImageData = UIImageJPEGRepresentation(wonderImage.image!, 1) //binary data object of photo image
+			
+			//inject the photo in the core data
+			let newPhoto = NSEntityDescription.insertNewObjectForEntityForName("Photos", inManagedObjectContext: photosContext) as! Photos
+			
+			newPhoto.wonderName = photosWonderName
+			newPhoto.wonderPhoto = newImageData
+			
+			do{
+				try	photosContext.save()
+				saveImageConfirmationLabel.alpha = 1
+				saveImageConfirmationLabel.text = "Saved Photo of: " + photosWonderName
+			} catch _{
+				
+			}
+		}
 	}
 
     /*

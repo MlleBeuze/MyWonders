@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddWonderViewController: UIViewController {
+class AddWonderViewController: UIViewController, UITextFieldDelegate {
 	
 	@IBOutlet weak var topSaveConfirmationLabel: UILabel!
 	@IBOutlet weak var wonderNameTextField: UITextField!
@@ -32,8 +32,10 @@ class AddWonderViewController: UIViewController {
 			barButtonSystemItem: saveRightBarButton,
 			target: self, action: #selector(AddWonderViewController.addSaveButtonAction(_:)))
 	
-	topSaveConfirmationLabel.alpha = 0
-	wonderNotesTextView.text = ".."
+		topSaveConfirmationLabel.alpha = 0
+		wonderNotesTextView.text = ".."
+		
+		self.wonderNameTextField.delegate = self
 	
     }
 	
@@ -101,6 +103,16 @@ class AddWonderViewController: UIViewController {
 			vc.photosWonderName = wonderName //the new vc var = this vc var
 			vc.photosSourceType = "Photos"	//the new vc var = this vc var
 		}
+	}
+	
+	//Keyboard Control
+	func textFieldShouldReturn(texField: UITextField) ->Bool{
+		wonderNameTextField.resignFirstResponder()
+		return false;
+	}
+	
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		self.view.endEditing(true);
 	}
 
 }

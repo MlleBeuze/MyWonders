@@ -584,7 +584,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save Confirmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbV-fm-503">
-                                <rect key="frame" x="20" y="72" width="560" height="14.5"/>
+                                <rect key="frame" x="20" y="72" width="560" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -633,7 +633,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-180.000000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ye0-Lz-v0E">
-                                <rect key="frame" x="486" y="153" width="95.5" height="30"/>
+                                <rect key="frame" x="486" y="153" width="96" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -661,6 +661,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdh-27-Vcq">
+                                <rect key="frame" x="480" y="478" width="41" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="iOE-m2-MQu"/>
+                                </constraints>
+                                <state key="normal" image="camera"/>
+                                <connections>
+                                    <segue destination="7RL-5e-Rlb" kind="show" identifier="editToCamera" id="xkN-bB-FWw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -671,10 +681,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="gzu-nT-ury" secondAttribute="trailing" constant="9" id="8Fe-sY-7xZ"/>
                             <constraint firstItem="ijp-eX-T9B" firstAttribute="trailing" secondItem="gSn-fg-A2G" secondAttribute="trailingMargin" id="96w-Vp-eqB"/>
                             <constraint firstItem="gzu-nT-ury" firstAttribute="top" secondItem="ijp-eX-T9B" secondAttribute="bottom" constant="8" id="Au1-Nt-QDr"/>
+                            <constraint firstItem="hdh-27-Vcq" firstAttribute="top" secondItem="loZ-w0-Sa1" secondAttribute="top" id="EMs-O7-pWJ"/>
                             <constraint firstItem="E21-lg-DG9" firstAttribute="top" secondItem="jyZ-GU-iH3" secondAttribute="bottom" constant="22" id="HBd-ld-1lO"/>
                             <constraint firstItem="BmT-xd-vtH" firstAttribute="leading" secondItem="gSn-fg-A2G" secondAttribute="leadingMargin" id="LJ0-QJ-xd1"/>
                             <constraint firstItem="E21-lg-DG9" firstAttribute="leading" secondItem="BmT-xd-vtH" secondAttribute="trailing" id="LRC-CQ-1qZ"/>
                             <constraint firstItem="bsZ-fT-bAY" firstAttribute="trailing" secondItem="gSn-fg-A2G" secondAttribute="trailingMargin" id="Oae-N2-obW"/>
+                            <constraint firstItem="loZ-w0-Sa1" firstAttribute="leading" secondItem="hdh-27-Vcq" secondAttribute="trailing" constant="19" id="PZX-8X-ds6"/>
                             <constraint firstItem="loZ-w0-Sa1" firstAttribute="trailing" secondItem="gSn-fg-A2G" secondAttribute="trailingMargin" id="QJI-eQ-6Gb"/>
                             <constraint firstItem="5rP-3g-SMy" firstAttribute="top" secondItem="loZ-w0-Sa1" secondAttribute="bottom" constant="33" id="RWd-Zq-28h"/>
                             <constraint firstItem="bsZ-fT-bAY" firstAttribute="leading" secondItem="gSn-fg-A2G" secondAttribute="leadingMargin" id="Sjh-ME-Rnl"/>
@@ -812,6 +824,6 @@
         <image name="pic_ios" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="coh-c6-KA4"/>
+        <segue reference="xkN-bB-FWw"/>
     </inferredMetricsTieBreakers>
 </document>

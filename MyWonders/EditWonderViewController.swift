@@ -141,6 +141,13 @@ class EditWonderViewController: UIViewController, UITextFieldDelegate {
 			vc.photosWonderName = editSelectedWonderName
 			vc.photosSourceType = "Photos"
 		}
+		
+		if segue.identifier == "editToCamera"{
+			
+			let vc = segue.destinationViewController as! PhotosViewController
+			vc.photosWonderName = editSelectedWonderName
+			vc.photosSourceType = "Camera"
+		}
 	}
 	
 	//Keyboard Control

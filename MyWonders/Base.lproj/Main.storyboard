@@ -352,6 +352,13 @@
                                     <segue destination="7RL-5e-Rlb" kind="show" identifier="addToPhotos" id="Wzn-Dm-RGM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yd7-xk-maw">
+                                <rect key="frame" x="490" y="503" width="40" height="40"/>
+                                <state key="normal" image="camera"/>
+                                <connections>
+                                    <segue destination="7RL-5e-Rlb" kind="show" identifier="addToCamera" id="coh-c6-KA4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -367,6 +374,8 @@
                             <constraint firstItem="kBd-jM-xhr" firstAttribute="trailing" secondItem="Yfs-Ie-e5o" secondAttribute="trailingMargin" id="SGK-bK-kjm"/>
                             <constraint firstItem="2CZ-Ch-wup" firstAttribute="trailing" secondItem="kBd-jM-xhr" secondAttribute="trailing" id="ShI-lr-ekT"/>
                             <constraint firstItem="YmM-Sb-hGe" firstAttribute="top" secondItem="lii-8Y-pfg" secondAttribute="bottom" constant="12" id="Shs-QZ-cOt"/>
+                            <constraint firstItem="yd7-xk-maw" firstAttribute="top" secondItem="2CZ-Ch-wup" secondAttribute="top" id="SpG-MU-rBk"/>
+                            <constraint firstItem="2CZ-Ch-wup" firstAttribute="leading" secondItem="yd7-xk-maw" secondAttribute="trailing" constant="8" symbolic="YES" id="TYF-0g-z0C"/>
                             <constraint firstItem="rgy-oD-9PP" firstAttribute="leading" secondItem="Yfs-Ie-e5o" secondAttribute="leadingMargin" id="Yk1-vH-lZZ"/>
                             <constraint firstItem="rgy-oD-9PP" firstAttribute="top" secondItem="lii-8Y-pfg" secondAttribute="bottom" constant="12" id="c9i-1Y-JDY"/>
                             <constraint firstItem="cKU-eo-49q" firstAttribute="trailing" secondItem="Yfs-Ie-e5o" secondAttribute="trailingMargin" id="ciQ-ZN-bRd"/>
@@ -381,6 +390,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraButtonLabel" destination="yd7-xk-maw" id="QQw-XJ-oq9"/>
                         <outlet property="photosButtonLabel" destination="2CZ-Ch-wup" id="Do1-Eu-QRG"/>
                         <outlet property="topSaveConfirmationLabel" destination="cKU-eo-49q" id="KjX-xt-QMu"/>
                         <outlet property="wonderLatitudeTextField" destination="pr1-HR-Oje" id="D6v-JT-a58"/>
@@ -793,6 +803,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="40" height="40"/>
         <image name="cog-20x20" width="20" height="20"/>
         <image name="iconApp_original" width="100" height="100"/>
         <image name="jewel-20x20" width="20" height="20"/>
@@ -801,6 +812,6 @@
         <image name="pic_ios" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bBh-a9-zJ7"/>
+        <segue reference="coh-c6-KA4"/>
     </inferredMetricsTieBreakers>
 </document>

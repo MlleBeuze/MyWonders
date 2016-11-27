@@ -17,6 +17,7 @@ class AddWonderViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var wonderLongitudeTextField: UITextField!
 	@IBOutlet weak var wonderNotesTextView: UITextView!
 	@IBOutlet weak var photosButtonLabel: UIButton!
+	@IBOutlet weak var cameraButtonLabel: UIButton!
 	
 	var wonderName:String = ""
 	var wonderLatitude:Double = 0.0
@@ -38,6 +39,7 @@ class AddWonderViewController: UIViewController, UITextFieldDelegate {
 		
 		self.wonderNameTextField.delegate = self
 		photosButtonLabel.alpha = 0
+		cameraButtonLabel.alpha = 0
 	
     }
 	
@@ -76,6 +78,7 @@ class AddWonderViewController: UIViewController, UITextFieldDelegate {
 			topSaveConfirmationLabel.alpha = 1
 			topSaveConfirmationLabel.text = "Saved: " + wonderName
 			photosButtonLabel.alpha = 1
+			cameraButtonLabel.alpha = 1
 		} catch {
 			topSaveConfirmationLabel.alpha = 1
 			topSaveConfirmationLabel.text = "Error: " + wonderName
@@ -106,6 +109,13 @@ class AddWonderViewController: UIViewController, UITextFieldDelegate {
 			vc.photosWonderName = wonderName //the new vc var = this vc var
 			vc.photosSourceType = "Photos"	//the new vc var = this vc var
 		}
+		
+		if segue.identifier == "addToCamera"{
+			let vc = segue.destinationViewController as! PhotosViewController
+			vc.photosWonderName = wonderName //the new vc var = this vc var
+			vc.photosSourceType = "Camera"	//the new vc var = this vc var
+		}
+
 	}
 	
 	//Keyboard Control

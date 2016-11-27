@@ -900,11 +900,70 @@
                     <view key="view" contentMode="scaleToFill" id="gAN-B6-Zvp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound Wonder Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dv8-VT-bQ9">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save Confirmation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPW-Tn-k21">
+                                <rect key="frame" x="20" y="101" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wonder Sound Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O7V-RG-8KH">
+                                <rect key="frame" x="20" y="130" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record Play Status Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFF-iU-6wa">
+                                <rect key="frame" x="20" y="221" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueo-GH-Ujr">
+                                <rect key="frame" x="73" y="280" width="40" height="40"/>
+                                <state key="normal" title="Button" image="microphone"/>
+                                <connections>
+                                    <action selector="recordButtonAction:" destination="YqM-Wz-d4D" eventType="touchUpInside" id="kFI-Rl-ZEp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfd-tb-Acx">
+                                <rect key="frame" x="458" y="280" width="40" height="40"/>
+                                <state key="normal" title="Button" image="play"/>
+                                <connections>
+                                    <action selector="playButtonAction:" destination="YqM-Wz-d4D" eventType="touchUpInside" id="bEX-Oe-iQo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9p-z3-adV">
+                                <rect key="frame" x="280" y="280" width="40" height="40"/>
+                                <state key="normal" title="Button" image="stop"/>
+                                <connections>
+                                    <action selector="stopButtonAction:" destination="YqM-Wz-d4D" eventType="touchUpInside" id="SUo-gR-e2C"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sounds" id="19b-WG-jEJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dEU-3L-v7x"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dEU-3L-v7x">
+                            <connections>
+                                <action selector="soundSaveButtonAction:" destination="YqM-Wz-d4D" id="kVp-Gh-C45"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="playButtonOutlet" destination="cfd-tb-Acx" id="x3W-Ed-xG0"/>
+                        <outlet property="recordButtonOutlet" destination="ueo-GH-Ujr" id="6uZ-ob-7pq"/>
+                        <outlet property="soundRecordPlayStatusLabel" destination="jFF-iU-6wa" id="pNC-Q1-iQu"/>
+                        <outlet property="soundSaveConfirmationLabel" destination="nPW-Tn-k21" id="CYb-b7-o1e"/>
+                        <outlet property="soundTitleTextField" destination="O7V-RG-8KH" id="3sG-sc-R2K"/>
+                        <outlet property="soundWonderNameLabel" destination="Dv8-VT-bQ9" id="M95-SG-wgZ"/>
+                        <outlet property="stopButtonOutlet" destination="k9p-z3-adV" id="7TR-bY-bGF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qu1-lj-DU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -965,6 +1024,8 @@
         <image name="microphone" width="40" height="40"/>
         <image name="pic_fields_album" width="40" height="40"/>
         <image name="pic_ios" width="40" height="40"/>
+        <image name="play" width="40" height="40"/>
+        <image name="stop" width="40" height="40"/>
         <image name="vol_mute" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>

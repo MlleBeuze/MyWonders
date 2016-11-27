@@ -7,9 +7,38 @@
 //
 
 import UIKit
+import CoreData
+import AVFoundation
 
-class SoundsViewController: UIViewController {
+class SoundsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
+	var soundsWonderName: String!
+	var soundURL: String!				//declare var so it will be populated from incming segue
+	var audioRecorder: AVAudioRecorder?	//used to store in CoreData
+	var audioPlayer: AVAudioPlayer?
+	
+	@IBOutlet weak var soundWonderNameLabel: UILabel!
+	@IBOutlet weak var soundSaveConfirmationLabel: UILabel!
+	@IBOutlet weak var soundTitleTextField: UITextField!
+	@IBOutlet weak var soundRecordPlayStatusLabel: UILabel!
+	@IBOutlet weak var recordButtonOutlet: UIButton!
+	@IBOutlet weak var stopButtonOutlet: UIButton!
+	@IBOutlet weak var playButtonOutlet: UIButton!
+	
+	
+	@IBAction func soundSaveButtonAction(sender: UIBarButtonItem) {
+	}
+	
+	@IBAction func recordButtonAction(sender: UIButton) {
+	}
+	
+	@IBAction func stopButtonAction(sender: UIButton) {
+	}
+	
+	@IBAction func playButtonAction(sender: UIButton) {
+	}
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 

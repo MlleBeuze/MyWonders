@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EditWonderViewController: UIViewController {
+class EditWonderViewController: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet weak var editSaveConfirmationLabel: UILabel!
 	@IBOutlet weak var wonderNameTextField: UITextField!
@@ -25,6 +25,8 @@ class EditWonderViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 		wonderNameTextField.text = editSelectedWonderName
+	
+		self.wonderNameTextField.delegate = self
 		
 		//Conver CD Lat + Lon doubles to string
 		let cellLatitudeDouble:Double = editSelectedWonderLatitude as Double!
@@ -139,6 +141,16 @@ class EditWonderViewController: UIViewController {
 			vc.photosWonderName = editSelectedWonderName
 			vc.photosSourceType = "Photos"
 		}
+	}
+	
+	//Keyboard Control
+	func textFieldShouldReturn(texField: UITextField) ->Bool{
+		wonderNameTextField.resignFirstResponder()
+		return false;
+	}
+	
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		self.view.endEditing(true);
 	}
 
     /*

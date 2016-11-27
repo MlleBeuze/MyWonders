@@ -43,6 +43,7 @@ class WonderPhotosTableViewController: UITableViewController, UINavigationContro
 
 		
 	}
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

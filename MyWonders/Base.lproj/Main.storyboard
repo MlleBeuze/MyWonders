@@ -631,14 +631,14 @@
                                 <rect key="frame" x="540" y="478" width="40" height="40"/>
                                 <state key="normal" image="pic_ios"/>
                                 <connections>
-                                    <segue destination="7RL-5e-Rlb" kind="show" id="bBh-a9-zJ7"/>
+                                    <segue destination="7RL-5e-Rlb" kind="show" identifier="editToPhotos" id="bBh-a9-zJ7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijp-eX-T9B">
                                 <rect key="frame" x="540" y="381" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="0dM-JN-Lyu"/>
-                                    <constraint firstAttribute="height" constant="40" id="9Ji-3y-iHt"/>
+                                    <constraint firstAttribute="width" constant="40" id="RVf-nv-A3x"/>
+                                    <constraint firstAttribute="height" constant="40" id="lsv-KT-bhT"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="pic_fields_album"/>
                                 <connections>
@@ -658,10 +658,9 @@
                             <constraint firstItem="jyZ-GU-iH3" firstAttribute="leading" secondItem="gSn-fg-A2G" secondAttribute="leadingMargin" id="2qM-lc-xa7"/>
                             <constraint firstItem="uAF-AG-8RO" firstAttribute="top" secondItem="jyZ-GU-iH3" secondAttribute="bottom" constant="26" id="4VD-7C-8dy"/>
                             <constraint firstItem="jyZ-GU-iH3" firstAttribute="top" secondItem="bbV-fm-503" secondAttribute="bottom" constant="14.5" id="67K-jB-4Ei"/>
-                            <constraint firstItem="ijp-eX-T9B" firstAttribute="trailing" secondItem="gSn-fg-A2G" secondAttribute="trailingMargin" id="6Jj-Ji-Tub"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gzu-nT-ury" secondAttribute="trailing" constant="9" id="8Fe-sY-7xZ"/>
-                            <constraint firstItem="gzu-nT-ury" firstAttribute="top" secondItem="ijp-eX-T9B" secondAttribute="bottom" constant="8" id="9ph-hZ-E12"/>
-                            <constraint firstItem="gzu-nT-ury" firstAttribute="top" secondItem="ijp-eX-T9B" secondAttribute="bottom" constant="8" id="Afb-vF-0ag"/>
+                            <constraint firstItem="ijp-eX-T9B" firstAttribute="trailing" secondItem="gSn-fg-A2G" secondAttribute="trailingMargin" id="96w-Vp-eqB"/>
+                            <constraint firstItem="gzu-nT-ury" firstAttribute="top" secondItem="ijp-eX-T9B" secondAttribute="bottom" constant="8" id="Au1-Nt-QDr"/>
                             <constraint firstItem="E21-lg-DG9" firstAttribute="top" secondItem="jyZ-GU-iH3" secondAttribute="bottom" constant="22" id="HBd-ld-1lO"/>
                             <constraint firstItem="BmT-xd-vtH" firstAttribute="leading" secondItem="gSn-fg-A2G" secondAttribute="leadingMargin" id="LJ0-QJ-xd1"/>
                             <constraint firstItem="E21-lg-DG9" firstAttribute="leading" secondItem="BmT-xd-vtH" secondAttribute="trailing" id="LRC-CQ-1qZ"/>
@@ -672,7 +671,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="uAF-AG-8RO" secondAttribute="trailing" constant="95" id="THO-09-yyP"/>
                             <constraint firstItem="bbV-fm-503" firstAttribute="leading" secondItem="gSn-fg-A2G" secondAttribute="leadingMargin" id="TuO-lJ-8IY"/>
                             <constraint firstItem="bbV-fm-503" firstAttribute="trailing" secondItem="gSn-fg-A2G" secondAttribute="trailingMargin" id="W2w-UE-idF"/>
-                            <constraint firstItem="ijp-eX-T9B" firstAttribute="trailing" secondItem="gSn-fg-A2G" secondAttribute="trailingMargin" id="dUG-cf-jaU"/>
                             <constraint firstItem="bsZ-fT-bAY" firstAttribute="top" secondItem="ye0-Lz-v0E" secondAttribute="bottom" constant="8" id="dd3-JI-yJ1"/>
                             <constraint firstItem="BmT-xd-vtH" firstAttribute="top" secondItem="jyZ-GU-iH3" secondAttribute="bottom" constant="26" id="j2s-On-Vah"/>
                             <constraint firstItem="E21-lg-DG9" firstAttribute="top" secondItem="jyZ-GU-iH3" secondAttribute="bottom" constant="22" id="jmJ-Ui-CDp"/>
@@ -685,6 +683,8 @@
                     </view>
                     <connections>
                         <outlet property="editSaveConfirmationLabel" destination="bbV-fm-503" id="hft-6t-0I1"/>
+                        <outlet property="numberOfPhotosLabel" destination="gzu-nT-ury" id="5X6-Mj-LTx"/>
+                        <outlet property="wonderImageButtonOutlet" destination="ijp-eX-T9B" id="3au-Y9-KQ6"/>
                         <outlet property="wonderLatitudeTextField" destination="E21-lg-DG9" id="XlW-Dz-p1d"/>
                         <outlet property="wonderLongitudeTextField" destination="ye0-Lz-v0E" id="H1r-36-IWv"/>
                         <outlet property="wonderNameTextField" destination="jyZ-GU-iH3" id="ssh-lV-Ucz"/>
@@ -711,7 +711,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="467.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconApp_original" translatesAutoresizingMaskIntoConstraints="NO" id="kJg-iy-xS8">
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconApp_original" translatesAutoresizingMaskIntoConstraints="NO" id="kJg-iy-xS8">
                                             <rect key="frame" x="8" y="8" width="584" height="451.5"/>
                                         </imageView>
                                     </subviews>

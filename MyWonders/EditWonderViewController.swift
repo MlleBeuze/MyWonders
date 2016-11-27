@@ -17,6 +17,9 @@ class EditWonderViewController: UIViewController {
 	@IBOutlet weak var wonderLongitudeTextField: UITextField!
 	@IBOutlet weak var wonderNotesTextView: UITextView!
 	
+	@IBOutlet weak var wonderImageButtonOutlet: UIButton!
+	@IBOutlet weak var numberOfPhotosLabel: UILabel!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,6 +46,45 @@ class EditWonderViewController: UIViewController {
 			barButtonSystemItem: saveRightBarButton,
 			target: self, action: #selector(EditWonderViewController.editSaveButtonAction(_:)))
     }
+	
+	override func viewWillAppear(animated: Bool) {
+		//Retrieve the photos entity 1st photo image & total number of Photos
+		
+		//get Image Data from Core Data
+		let photosAppDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let photosContext: NSManagedObjectContext = photosAppDel.managedObjectContext
+		let photosFetchRequest = NSFetchRequest(entityName: "Photos")
+		//Create a predicate that selects on the "wonderName" property of the Core Data object
+		photosFetchRequest.predicate = NSPredicate(format: "wonderName = %@", editSelectedWonderName) //select 1 wonder record only
+		
+		var photos: [Photos] = [] //array to hold 1 wonder photos
+		
+		do{
+			let photosFetchResults = try photosContext.executeFetchRequest(photosFetchRequest) as? [Photos]
+			photos = photosFetchResults!
+		} catch {
+			print("Could not fetch \(error)")
+		}
+		
+		numberOfPhotosLabel.text = String(photos.count)
+		
+		if photos.count == 0{
+			if let image = UIImage(named: "photo_default"){
+				wonderImageButtonOutlet.setImage(image, forState: .Normal)
+			}
+		}
+		else{
+			let photo: Photos = photos[0] //get the 1st photo image
+			
+			if let thumbnail = UIImage(data: photo.wonderPhoto!){
+				wonderImageButtonOutlet.setImage(thumbnail, forState: .Normal)
+			} else{
+				if let image = UIImage(named: "photo_default"){
+					wonderImageButtonOutlet.setImage(image, forState: .Normal)
+				}
+			}
+		}
+	}
 	
 	@IBAction func editSaveButtonAction(sender: AnyObject){
 		//Save the wonder record to Core Data
@@ -89,7 +131,15 @@ class EditWonderViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+		if segue.identifier == "editToPhotos"{
+			
+			let vc = segue.destinationViewController as! PhotosViewController
+			vc.photosWonderName = editSelectedWonderName
+			vc.photosSourceType = "Photos"
+		}
+	}
 
     /*
     // MARK: - Navigation

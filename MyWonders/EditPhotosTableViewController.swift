@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import CoreData
+let wonderPhotosAppDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+let wonderPhotosContext:NSManagedObjectContext = wonderPhotosAppDel.managedObjectContext
+let wonderPhotosFetchRequest = NSFetchRequest(entityName: "Photos")
 
 class EditPhotosTableViewController: UITableViewController {
-
+	
+	var wonderPhotosArray: [Photos] = [] //array to hold 1 wonder multiple photos
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,8 +23,25 @@ class EditPhotosTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+	
+	override func viewWillAppear(animated: Bool) {
+		//Create a predicate that selects on the "wonderName" propertu of the Core Data object
+		wonderPhotosFetchRequest.predicate = NSPredicate(format: "wonderName = %@", editSelectedWonderName) //select 1 wonder record only
+		
+		do{
+			let wonderPhotosFetchedResults = try wonderPhotosContext.executeFetchRequest(wonderPhotosFetchRequest) as? [Photos]
+			wonderPhotosArray = wonderPhotosFetchedResults!
+		}
+		catch{
+			print("Could not fetch \(error)")
+		}
+		
+		self.tableView.reloadData()
+		
+		
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,17 +57,47 @@ class EditPhotosTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return wonderPhotosArray.count
     }
 
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EditPhotoCell", forIndexPath: indexPath)
 
-        // Configure the cell...
+		// Configure the cell...
+		
+		let wonderPhoto: Photos = wonderPhotosArray[indexPath.row]
+		let wonderPhotoImage = UIImage(data: wonderPhoto.wonderPhoto! as NSData)
+		
+	
+		
+		if let wonderPhotoImageView = cell.viewWithTag(100) as? UIImageView{
+			wonderPhotoImageView.image = wonderPhotoImage
+		}
+		
 
         return cell
     }
+	
+	// Override to support editing the table view.
+	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		if editingStyle == .Delete {
+			wonderPhotosContext.deleteObject(wonderPhotosArray[indexPath.row] as Photos) //delete from core Data
+			
+			var error: NSError?
+			do{
+				try wonderPhotosContext.save()
+			} catch let error1 as NSError{
+				error = error1
+				print("Could not delete \(error)")
+			}
+			
+			wonderPhotosArray.removeAtIndex(indexPath.row) //delete from array of objects
+			
+			// Delete the row from the data source
+			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+		}
+	}
 	
 
     /*
